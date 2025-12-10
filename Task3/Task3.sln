@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36717.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookObjects", "BookObjects\BookObjects.csproj", "{F009D3BC-6E23-4245-91C9-F749BDAEEDE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DriverCode", "DriverCode\DriverCode.csproj", "{761C53C8-DBDC-46A7-832A-336254634DF4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F009D3BC-6E23-4245-91C9-F749BDAEEDE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F009D3BC-6E23-4245-91C9-F749BDAEEDE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F009D3BC-6E23-4245-91C9-F749BDAEEDE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F009D3BC-6E23-4245-91C9-F749BDAEEDE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{761C53C8-DBDC-46A7-832A-336254634DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{761C53C8-DBDC-46A7-832A-336254634DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{761C53C8-DBDC-46A7-832A-336254634DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{761C53C8-DBDC-46A7-832A-336254634DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9E8143B-4A86-4F9C-8865-3C11BD3DA026}
+	EndGlobalSection
+EndGlobal
