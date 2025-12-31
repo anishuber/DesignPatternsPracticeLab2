@@ -4,7 +4,7 @@
     {
         public override bool DoHandle(User user)
         {
-            var ok = user.Name != "Vasili";
+            var ok = user.Name != "Jane Doe";
             Console.WriteLine($"[Authenticator] {(ok ? "OK" : "FAIL (sorry you were banned)")} (Name={user.Name})");
             return !ok;
         }

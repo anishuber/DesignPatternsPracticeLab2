@@ -6,9 +6,9 @@ using Task3;
 
 namespace Driver_Code
 {
-    internal class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine("==== Task 1 ====");
 
@@ -16,7 +16,7 @@ namespace Driver_Code
             {
                 new Sphere(3),
                 new Cube(2),
-                new Paralellepiped(2,3,4),
+                new Parallelepiped(2,3,4),
                 new Torus(5, 1.2),
             };
 
@@ -31,9 +31,9 @@ namespace Driver_Code
                         Console.WriteLine($"{nameof(Cube)} => V = {volumeVisitor.Volume}");
                         break;
 
-                    case Paralellepiped p:
+                    case Parallelepiped p:
                         p.Accept(volumeVisitor);
-                        Console.WriteLine($"{nameof(Paralellepiped)} => V = {volumeVisitor.Volume}");
+                        Console.WriteLine($"{nameof(Parallelepiped)} => V = {volumeVisitor.Volume}");
                         break;
 
                     case Sphere sphere:
@@ -57,14 +57,14 @@ namespace Driver_Code
 
             var users = new[]
             {
-                new User("JesusChrist", 2),
-                new User("JesusChrist", 1),
-                new User("Vasili", 2),
+                new User("Sam", 2),
+                new User("Sam", 1),
+                new User("Jane Doe", 2),
             };
 
             foreach (var user in users)
             {
-                Console.WriteLine($"\nAccess to idk altushka s gosuslug requested: Name={user.Name}, Role={user.Role}");
+                Console.WriteLine($"\nAcces requested: Name={user.Name}, Role={user.Role}");
                 authenticator.Handle(user);
             }
 
@@ -73,7 +73,6 @@ namespace Driver_Code
             cart.Push("Milk");
             cart.Push("Bread");
             cart.Push("Cheese");
-            cart.Push("Matrini ofc cause it's 31st December and I'm doing THIS");
 
             var it = cart.CreateIterator();
 
@@ -85,27 +84,21 @@ namespace Driver_Code
             }
 
             Console.WriteLine("==== Memento ====");
-            var editor = new TextEditor
-            {
-                Title = "You",
-                Content = "Must"
-            };
-
+            var editor = new TextEditor("Title", "Content");
             var history = new TextEditorHistory(editor);
 
             history.Backup();
             PrintEditor("Initial", editor);
 
-            editor.Content += " not fear ";
+            editor.Write(" + content 2");
             history.Backup();
             PrintEditor("After edit", editor);
 
-            editor.Content += "fear is the mind-killer ";
+            editor.Write(" + content 3");
             history.Backup();
             PrintEditor("After second edit", editor);
 
             Console.WriteLine("\n--- Undo 2 times ---");
-            history.Undo();
             history.Undo();
             PrintEditor("After first undo", editor);
 
@@ -114,19 +107,16 @@ namespace Driver_Code
 
             Console.WriteLine("\n--- Redo ---");
             history.Redo();
-            history.Redo();
             PrintEditor("After redo", editor);
 
-            editor.Content = "Should not care why I have to call the redo and undo twice the first time in a sequence (I have no idea where I screwed up & will fix it next year sorry)";
+            editor.Write(" + content 4");
             history.Backup();
-            PrintEditor("After third edit:", editor);
+            PrintEditor("After third edit", editor);
 
             Console.WriteLine("\n--- undo & redo ---");
             history.Undo();
-            history.Undo();
             PrintEditor("After third undo", editor);
 
-            history.Redo();
             history.Redo();
             PrintEditor("After second redo", editor);
 

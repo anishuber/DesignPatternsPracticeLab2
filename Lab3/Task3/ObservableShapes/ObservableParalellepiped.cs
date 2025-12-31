@@ -7,7 +7,7 @@ using Task1;
 
 namespace Task3.ObservableShapes
 {
-    public class ObservableParalellepiped : Paralellepiped, IObservableShape
+    public class ObservableParalellepiped : Parallelepiped, IObservableShape
     {
         private IShapeObserver? _observer;
 
@@ -15,7 +15,7 @@ namespace Task3.ObservableShapes
         {
         }
 
-        public string Class => nameof(Paralellepiped);
+        public string Class => nameof(Parallelepiped);
 
         public new bool IsDisplayed
         {

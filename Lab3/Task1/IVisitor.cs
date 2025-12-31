@@ -9,7 +9,7 @@ namespace Task1
     public interface IVisitor
     {
         public void Visit(Cube cube);
-        public void Visit(Paralellepiped paralellepiped);
+        public void Visit(Parallelepiped parallelepiped);
         public void Visit(Sphere sphere);
         public void Visit(Torus torus);
     }

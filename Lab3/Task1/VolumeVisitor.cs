@@ -16,9 +16,9 @@ namespace Task1
             Volume = Math.Pow(cube.A, 3);
         }
 
-        public void Visit(Paralellepiped paralellepiped)
+        public void Visit(Parallelepiped parallelepiped)
         {
-            Volume = paralellepiped.A * paralellepiped.B * paralellepiped.C;
+            Volume = parallelepiped.A * parallelepiped.B * parallelepiped.C;
         }
 
         public void Visit(Sphere sphere)

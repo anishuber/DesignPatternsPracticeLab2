@@ -8,10 +8,10 @@ namespace Task2.Memento
 {
     public class TextEditorHistory
     {
-        private List<TextEditorState> _states = [];
-        private List<TextEditorState> _undoneStates = [];
+        private readonly List<TextEditorState> _states = [];
+        private readonly List<TextEditorState> _undoneStates = [];
 
-        private TextEditor _editor;
+        private readonly TextEditor _editor;
 
         public TextEditorHistory(TextEditor editor)
         {
@@ -21,6 +21,7 @@ namespace Task2.Memento
         public void Backup()
         {
             _states.Add(_editor.MakeSnapshot());
+            _undoneStates.Clear();
         }
 
         public void Undo()
@@ -30,10 +31,11 @@ namespace Task2.Memento
                 return;
             }
 
-            TextEditorState prevState = _states[^1];
+            var prevState = _states[^1];
             _undoneStates.Add(prevState);
             _states.Remove(prevState);
-            _editor.Restore(prevState);
+
+            _editor.Restore(_states[^1]);
         }
 
         public void Redo()
@@ -43,9 +45,10 @@ namespace Task2.Memento
                 return;
             }
 
-            TextEditorState undoneState = _undoneStates[^1];
+            var undoneState = _undoneStates[^1];
             _states.Add(undoneState);
             _undoneStates.Remove(undoneState);
+
             _editor.Restore(undoneState);
         }
     }

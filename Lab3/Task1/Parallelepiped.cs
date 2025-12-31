@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Task1
 {
-    public class Paralellepiped : IShape
+    public class Parallelepiped : IShape
     {
         public double A { get; set; }
         public double B { get; set; }
         public double C { get; set; }
         public bool IsDisplayed { get; set; } = false;
 
-        public Paralellepiped(double a, double b, double c)
+        public Parallelepiped(double a, double b, double c)
         {
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(a);
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(b);
